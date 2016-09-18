@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Matching Game</title>
+        <style type="text/css">
+            img {
+                position: absolute;
+            }
+            div {
+                position: absolute;
+                width: 500px;
+                height: 500px;
+            }
+            #rightSide {
+                left: 500px;
+                border-left: 1px solid black;
+            }
+        </style>
+    </head>
+    <body onload="generateFace()">
+        <h1>Matching Game</h1>
+        <p>Click on the extra smiling face on the left.</p>
+        <div id="leftSide"></div>
+        <div id="rightSide"></div>
+        <script>
+        var face;
+        var leftSide = document.getElementById("leftSide");
+        var rightSide = document.getElementById("rightSide");
+        var theBody = document.getElementsByTagName("body")[0];
+        var numberOfFaces = 5;
+
+        function generateFace() {
+
+            for (var i = 0; i < numberOfFaces; i ++) {
+                var face = document.createElement("img");
+                var left_position = Math.floor(Math.random() * 400);
+                var top_position = Math.floor(Math.random() * 400);
+                face.setAttribute('src', "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
+                face.style.left = left_position + "px";
+                face.style.top = top_position + "px";
+                leftSide.appendChild(face);
+                cloneFace = leftSide.cloneNode(true);
+                cloneFace.removeChild(cloneFace.lastChild);
+                rightSide.appendChild(cloneFace);
+            }
+
+            leftSide.lastChild.onclick =
+                function nextLevel(event) {
+                    event.stopPropagation();
+
+                    while (leftSide.firstChild, rightSide.firstChild) {
+                        leftSide.removeChild(leftSide.firstChild);
+                        rightSide.removeChild(rightSide.firstChild);
+                    }
+                    /* Also can use:
+                    while (leftSide.firstChild) {
+                        leftSide.removeChild(leftSide.firstChild);
+                    }
+                    while (rightSide.firstChild) {
+                        rightSide.removeChild(rightSide.firstChild);
+                    }
+                    */
+                    numberOfFaces += 5;
+                    generateFace();
+                }
+
+            theBody.onclick = function gameOver() {
+                alert("Game Over! you are failed.");
+                theBody.onclick = null;
+                leftSide.lastChild.onclick = null;
+            }
+        }
+        </script>
+    </body>
+</html>
