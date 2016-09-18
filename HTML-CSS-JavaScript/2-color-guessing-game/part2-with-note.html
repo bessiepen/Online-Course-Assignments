@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Color Guessing Game</title>
+</head>
+<body onload="do_game()" style="">
+    <script type="text/javascript">
+        var target;
+        var target_index;
+        var colors = ["azure", "beige", "red", "gold", "honeydew", "khaki", "lime", "navy", "orange", "pink", "skyblue", "wheat"];
+        var colors_alpha = colors.sort(); // 不需要该行，guess_input和target直接用"<",">"，都能根据alpha来排列大小，此行代码的作用是自动让colors按照alpha的顺序显示出来。
+        var guess_input;
+        var guesses = 0;
+        var finished = false;
+        //var myBody = document.getElementsByTagName("body"); 这是一个变量，所以需要var来设置，而不是下面的放入function中, 不能要[0]，否则发生错误：重复loop哪怕回答正确。
+
+        function do_game() {
+            // Generate a random number:
+            target_index = Math.random() * colors.length;
+            target_index_integer = Math.floor(target_index);
+            // Assign the random number to the target color:
+            target = colors[target_index_integer];
+            // Display the target:
+            alert(target);
+            // Go into a loop:
+            while (!finished) {
+                guess_input = prompt("I am thinking of one of these colors:\n\n" +
+                                     colors_alpha +
+                                     "\n\nWhat color am I thinking of?");
+                guesses += 1;
+                finished = check_guess();
+                //myBody = document.getElementsByTagName("body")[0];
+            }
+            //myBody = document.getElementsByTagName("body")[0];
+        }
+
+        function check_guess() {
+            if (colors.indexOf(guess_input) == -1) {
+                alert("I don't recognize that color!\n\nPlease guess the color in the list I mentioned before.");
+                return false;
+            }
+            if (guess_input > target) {
+                alert("Sorry, your guess is not correct!\n\nHint: your color is alphabetically higher than mine.\n\nPlease try again.");
+                return false;
+            }
+            if (guess_input < target) {
+                alert("Sorry, your guess is not correct!\n\nHint: your color is alphabetically lower than mine.\n\nPlease try again.");
+                return false;
+            }
+            myBody = document.getElementsByTagName("body")[0];
+            myBody.style.background=target;
+            /* 问题：在chrome中，先出alert，再变颜色。并且当一次猜对时，是“1 guesses”复数。
+            alert("Congratulations! You have guess the color!\n\n" +
+                  "It took you" + guesses + " guesses to finished the game!\n\n" +
+                  "You can see the color in the background.");
+                  */
+            // 解决了“1 guesses”问题。（从别人的作业中学习到的）
+            var guessEs = " guesses";
+            if(guesses == 1) {
+                guessEs = " guess"
+              }
+            // setTimeout延迟1（好像不是1秒，1秒是1000）执行alert代码，解决了chrome中先alert，再变颜色的问题。（从别人的作业中学习到的）
+            setTimeout(function(){alert("You are right! You took " + guesses + guessEs + "!")}, 1);
+            //myBody=document.getElementsByTagName("body")[0]; 错误：重新开始loop
+            /*for (var i = 0; i < myBody.length; i = i + 1) {
+               myBody[i].style.background = target;
+             }
+             在fixbox中可以变出颜色，但是会重新开始loop*/
+            //document.body.style.background = target; 错误：重新开始loop；
+            return true; // 如果没有这行，那么在chrome中，1，不会显示背景颜色；2，回答正确也会重新开始loop。在firebox中，会显示颜色，但回答正确会重新开始loop。
+        }
+    </script>
+</body>
+</html>
