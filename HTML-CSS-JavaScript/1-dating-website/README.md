@@ -18,4 +18,4 @@ Part2:
 
 ## Learning Notes
 
-A [learning notes]() I took in this assignment.
+A [learning notes](learning-notes.md) I took in this assignment.
