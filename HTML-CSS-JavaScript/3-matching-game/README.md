@@ -6,10 +6,10 @@ assignment duration: 2016/09/17
 
 ## Assignment
 
-- [part1](matching-game-part1.html)
-- [part2](matching-game-part2.html)
-- [part3](matching-game-part3.html)
-- [part4](matching-game-part4.html)
+- [part1](Matching Game part1.html)
+- [part2](Matching Game part2.html)
+- [part3](Matching Game part3.html)
+- [part4](Matching Game part4.html)
 
 **note**: part4 is the last version.
 
