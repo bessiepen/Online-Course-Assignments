@@ -6,13 +6,13 @@ assignment duration: 2016/09/03
 
 ## Assignment
 
-**note**: part3 is the last version.
+**note**: [part3](part3.html) is the last version, same css style with part2, but add some controls.
 
-Part1:
+[Part1](part1.html) looks like this:
 
 ![part1 snapshot](https://github.com/bessiepen/Online-Course-Assignments/blob/master/HTML-CSS-JavaScript/1-dating-website/part1.png?raw=true)
 
-Part2:
+[Part2](part2.html) looks like this:
 
 ![part2 snapshot](https://github.com/bessiepen/Online-Course-Assignments/blob/master/HTML-CSS-JavaScript/1-dating-website/part2.png?raw=true)
 
