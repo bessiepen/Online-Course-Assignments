@@ -4,6 +4,8 @@ Start time: 2016/08/25 | End time: 2016/09/18
 
 Course Link: [HTML,CSS and JavaScript](https://www.coursera.org/learn/html-css-javascript/)
 
+Platform: Coursera
+
 ## table of contents
 
 It's weekly course, three weeks in totall.
