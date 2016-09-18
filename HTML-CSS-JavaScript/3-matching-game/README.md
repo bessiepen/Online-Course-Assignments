@@ -17,7 +17,7 @@ assignment duration: 2016/09/17
 
 ## Learning Notes
 
-A [comment note](part2-with-note.html) I took with this assignment inside the code.
+A [comment note](Matching Game part4 note.html) I took with this assignment inside the code.
 
 A [learning note](learning-notes.md) I took with this assignment.
 
