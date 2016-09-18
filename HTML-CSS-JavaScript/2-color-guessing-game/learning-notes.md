@@ -62,6 +62,6 @@ array.indexOf(1, -3) // 0
 
 检索输入的颜色不在colors排列中：colors.indexOf(guess_input)==-1
 
-### += 的意思
+### `+=` 的意思
 
 count = count + 1 可以缩写为：count += 1
