@@ -19,6 +19,7 @@ var array = ["item1", "item2", "item3"];
 array[0];
 array.length;
 array.indexOf(item);
+array.sort();
 
 //math
 var variable = Math.floor(Math.random() * array.length)
