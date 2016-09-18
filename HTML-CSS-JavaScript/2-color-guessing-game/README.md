@@ -6,8 +6,8 @@ assignment duration: 2016/09/10
 
 ## Assignment
 
-- [part1](part1.html)
-- [part2](part2.html) 
+- [part1](part1.html) - a simple game which uses a loop with no feedback
+- [part2](part2.html) - a complete game with feedback such as "your answer is alphabetically higher than me!".
 
 **note**: part2 is the last version.
 
