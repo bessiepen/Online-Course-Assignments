@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dating Website</title>
+        <style type="text/css">
+            fieldset{
+                background: lightyellow;
+                border: 10px solid yellow;
+                margin-bottom: 10px;
+                width: 720px;
+            }
+            label{
+                width: 180px;
+                display: inline-block;
+                text-align: right;
+                vertical-align: top;
+            }
+            .rad-cheb-label{
+                width: auto;
+            }
+            span{
+                color: white;
+                width: 50px;
+                text-align: center;
+                display: inline-block;
+            }
+            .left{
+                background: red;
+            }
+            .right{
+                background: purple;
+            }
+            textarea{
+                width: 360px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+        <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data" >
+            <fieldset>
+                <legend>Your Face</legend>
+                <label for="avatar">Your image:</label>
+                <input type="file" id="avatar" name="avatar" required /><br>
+                <label for="preview">Image preview:</label><img id="preview" src="" />
+            </fieldset>
+            <fieldset>
+                <legend>Your General Details</legend>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Your full name" required /><br>
+                <label for="male">Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male" required /><label for="male" class="rad-cheb-label">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required /><label for="female" class="rad-cheb-label">Female</label><br>
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" value="18" required /><br>
+                <label for="birth">Date of Birth:</label>
+                <input type="date" name="birth" id="birth" /><br>
+                <label for="color">Favorite color:</label>
+                <input type="color" name="color" id="color" /><br>
+                <label for="country">Which country:</label>
+                <select id="country" name="country" />
+                    <option value="China">China</option>
+                    <option value="Britain">Britain</option>
+                    <option value="America">America</option>
+                    <option value="France">France</option>
+                    <option value="Japan">Japan</option>
+                    <option value="No selection">No selection</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Your Indicators</legend>
+                <label for="height">Height:</label>
+                <span class="left">Short</span><input type="range" name="height" id="height" min="0" max="100" /><span class="right">Tall</span><br>
+                <label for="salary">Salary:</label>
+                <span class="left">Poor</span><input type="range" name="salary" id="salary" min="0" max="100" /><span class="right">Rich</span>
+            </fieldset>
+            <fieldset>
+                <legend>Your Contact Information</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required /><br>
+                <label for="tel">Mobile:</label>
+                <input type="tel" id="tel" name="tel" /><br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="8" cols="40"></textarea><br>
+                <label for="cm-email">Method to contact you:</label>
+                <input type="checkbox" id="cm-email" name="contact method" value="Email" /><label class="rad-cheb-label" for="cm-email">Email</label>
+                <input type="checkbox" id="cm-whatapp" name="contact method" value="Whatapp" /><label class="rad-cheb-label" for="cm-whatapp">Whatapp</label>
+                <input type="checkbox" id="cm-inapp" name="contact method" value="In-app chat" /><label class="rad-cheb-label" for="cm-inapp">In-app chat</label>
+            </fieldset>
+            <input type="submit" name="submit" value="submit" />
+        </form>
+    </body>
+</html>
