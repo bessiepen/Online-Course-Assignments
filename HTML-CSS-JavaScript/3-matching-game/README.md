@@ -15,6 +15,36 @@ assignment duration: 2016/09/17
 
 **note**: part4 is the last version.
 
+## Code I Used
+
+```js
+//DOM:
+variable = document.getElementById("id");
+variable = document.getElementsByTagName("tag")[0];
+variable = document.createElement("element");
+node.appendChild();
+node.cloneNode(true); //clone node
+node.removeChild(node.childNodes);
+
+//loop:
+for (var i = 0; i < variable; i ++){
+    
+}
+
+//set attribute
+variable.setAttribute("attr", "value");
+variable.style.top = variable + "px";
+
+//mouse event
+node.onclick = function do_something() {
+    some code;
+}
+node.onclick = null;
+
+//math
+var position = Math.floor(Math.random() * 400);
+```
+
 ## Learning Notes
 
 A [comment note](Matching Game part4 note.html) I took with this assignment inside the code.
