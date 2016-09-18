@@ -18,4 +18,8 @@ assignment duration: 2016/09/03
 
 ## Learning Notes
 
-A [learning notes](learning-notes.md) I took in this assignment.
+A [learning notes](learning-notes.md) I took with this assignment.
+
+## Point
+
+I got 3/3 point in this assignment.
