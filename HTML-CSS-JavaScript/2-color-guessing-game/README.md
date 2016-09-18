@@ -11,6 +11,45 @@ assignment duration: 2016/09/10
 
 **note**: part2 is the last version.
 
+## Code tips
+
+```js
+//array
+var array = ["item1", "item2", "item3"];
+array[0];
+array.length;
+array.indexOf(item);
+
+//math
+var variable = Math.floor(Math.random() * array.length)
+
+//style
+variable.style.background = black;
+
+//while loop
+while (!finished) {
+    some code;
+    finished = true;
+}
+
+//decision
+function check() {
+    if (condition) {
+        some code;
+        return false;
+    }
+    if (condition) {
+        some code;
+        return false;
+    }
+    some code;
+    return true;
+}
+
+// timer event
+setTimeout(function(){},1000);
+```
+
 ## Learning Notes
 
 A [comment note](part2-with-note.html) I took with this assignment inside the code.
