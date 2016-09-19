@@ -45,6 +45,7 @@
             // };
 
             // 以下loop导致点击正确的图片后，重新又生成了5个，而不是+5个。为什么？while 和for有什么不同，为什么while不能循环使用numberOfFaces += 5，而for就可以？[p62]
+            // update: 在function nextLevel()[line91]中增加个count = 0;则能成功+5，难道是需要count和numberOfFaces都重新赋值。
             // while (count < numberOfFaces) {
             //     var face = document.createElement("img");
             //     var left_position = Math.floor(Math.random() * 400);
@@ -66,6 +67,7 @@
                 var left_position = Math.floor(Math.random() * 400);
                 var top_position = Math.floor(Math.random() * 400);
                 face.setAttribute('src', "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");// setAttribute("attr", "value"),[错误1]：http前有空格，于是识别错误，提示Uncaught SyntaxError: Invalid or unexpected token
+                // also: face.src = "url"
                 face.style.left = left_position + "px";
                 face.style.top = top_position + "px";
                 leftSide.appendChild(face);
@@ -85,25 +87,26 @@
             // leftSide.lastChild.onclick = function(){
             //     i += 5;
             // }
-            leftSide.lastChild.onclick =
-                function nextLevel(event) {
-                    event.stopPropagation();//阻止事件延伸到父元素，也就是该事件只针对当前元素，不渗透到父元素。
-
-                    // 以下while方法，同时使用两个，也是对的。
-                    // while (leftSide.firstChild, rightSide.firstChild) {
-                    //     leftSide.removeChild(leftSide.firstChild);
-                    //     rightSide.removeChild(rightSide.firstChild);// removeChild中不能只写firstChild。
-                    // }
-                    while (leftSide.firstChild) {
-                        leftSide.removeChild(leftSide.firstChild);
-                        // removeChild中不能只写firstChild。
-                    }
-                    while (rightSide.firstChild) {
-                        rightSide.removeChild(rightSide.firstChild);
-                    }
-                    numberOfFaces += 5;
-                    generateFace();
-                }
+            // more readable:
+            leftSide.lastChild.onclick = function nextLevel(event) {
+                                         event.stopPropagation();//阻止事件延伸到父元素，也就是该事件只针对当前元素，不渗透到父元素。
+                        
+                                         // 以下while方法，同时使用两个，也是对的。
+                                         // while (leftSide.firstChild, rightSide.firstChild) {
+                                         //     leftSide.removeChild(leftSide.firstChild);
+                                         //     rightSide.removeChild(rightSide.firstChild);// removeChild中不能只写firstChild。
+                                         // }
+                                         while (leftSide.firstChild) {
+                                            leftSide.removeChild(leftSide.firstChild);
+                                            // removeChild中不能只写firstChild。
+                                            }
+                                         while (rightSide.firstChild) {
+                                            rightSide.removeChild(rightSide.firstChild);
+                                            }
+                                         numberOfFaces += 5;
+                                         // count = 0; [line48]
+                                         generateFace();
+                                        }
                 // 直接删除，没有任何图片，没有循环
                 // while (leftSide.firstChild) {
                 //     leftSide.removeChild(leftSide.firstChild);
@@ -114,10 +117,10 @@
                 //     rightSide.removeChild(rightSide.firstChild);
                 // };
             theBody.onclick = function gameOver() {
-                alert("Game Over! you are failed.");
-                theBody.onclick = null; //从现在起任何body上的点击都无效
-                leftSide.lastChild.onclick = null;
-            }
+                              alert("Game Over! you are failed.");
+                              theBody.onclick = null; //从现在起任何body上的点击都无效
+                              leftSide.lastChild.onclick = null;
+                           }
 
         } //忘记了这些要在一个function中。
 
