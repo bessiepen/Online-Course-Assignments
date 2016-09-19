@@ -57,6 +57,8 @@ for (var i=0; i < numberOfFaces; i ++) {
 
 但是没有解决我的疑惑。
 
+评审别人的作业时，查到了问题所在，当我在改变numberOfFaces的值`numberOfFaces += 5`时，应该同时重新改变count的值为`count = 0`。这样以后，就能正常运作了。想一想，for loop中，每一次都是i和numberOfFaces同时重新赋值。不知是否是这个原因，但问题是解决了。
+
 ### 新的知识点
 
 1，`.stopPropagation()`
