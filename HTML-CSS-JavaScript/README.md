@@ -15,7 +15,7 @@ It's weekly course, three weeks in totall.
 | **Course**     | HTML&CSS            | Introduce to JavaScript | Advanced JavaScript |
 | **Assignment** | [Dating Website][1] | [Color Guessing Game][2]|[Matching Game][3]   |
 | **Duration**   | 08/25~09/03         | 09/05~09/10             | 09/15~09/18         |
-| **My Point**   | 3/3                 | 6/6                     | wait..              |
+| **My Point**   | 3/3                 | 6/6                     | 4/4                 |
 
 [1]: https://github.com/bessiepen/Online-Course-Assignments/blob/master/HTML-CSS-JavaScript/1-dating-website/README.md
 [2]: https://github.com/bessiepen/Online-Course-Assignments/blob/master/HTML-CSS-JavaScript/2-color-guessing-game/README.md
