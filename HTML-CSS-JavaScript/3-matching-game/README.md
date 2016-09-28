@@ -53,4 +53,4 @@ A [learning note](learning-notes.md) I took with this assignment.
 
 ## Point
 
-I got ? point with this assignment.
+I got 4/4 point with this assignment.
